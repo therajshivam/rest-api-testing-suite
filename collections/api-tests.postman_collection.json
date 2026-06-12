@@ -151,50 +151,6 @@
       "response": []
     },
     {
-      "name": "Get User By Created ID",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "exec": [
-              "pm.test(\"Status code is 200\", function () {\r",
-              "    pm.response.to.have.status(200);\r",
-              "});\r",
-              "\r",
-              "pm.test(\"Response has same ID\", function () {\r",
-              "    const jsonData = pm.response.json();\r",
-              "    pm.expect(jsonData.id).to.eql(Number(pm.environment.get(\"userId\")));\r",
-              "});"
-            ],
-            "type": "text/javascript",
-            "packages": {},
-            "requests": {}
-          }
-        }
-      ],
-      "request": {
-        "auth": {
-          "type": "noauth"
-        },
-        "method": "GET",
-        "header": [],
-        "url": {
-          "raw": "https://jsonplaceholder.typicode.com/users/{{userId}}",
-          "protocol": "https",
-          "host": [
-            "jsonplaceholder",
-            "typicode",
-            "com"
-          ],
-          "path": [
-            "users",
-            "{{userId}}"
-          ]
-        }
-      },
-      "response": []
-    },
-    {
       "name": "Get Invalid User",
       "event": [
         {
